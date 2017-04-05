@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPageBg"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+    <ExpandableListView
+        android:id="@+id/expand_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:descendantFocusability="blocksDescendants"
+        android:drawSelectorOnTop="false"
+        android:groupIndicator="@null"
+        android:dividerHeight="1px"
+        android:divider="#cecece"
+        android:childDivider="@color/colorPrimary"
+        />
+</RelativeLayout>
+
+
+
+
+

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="@color/itemLowBackground">
+    <item>
+        <color android:color="@color/music_bar_bg" />
+    </item>
+    <item>
+        <color android:color="@color/music_bar_bg" />
+    </item>
+</ripple>

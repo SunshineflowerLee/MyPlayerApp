@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#ff2196F3</color>
+    <color name="colorPrimaryGray">#60000000</color>
+    <color name="colorPrimaryDark">#00ffffff</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="colorYellow">#fadc42</color>
+    <color name="music_bar_bg">#ffffff</color>
+    <color name="select_color">#b4b2b2</color>
+
+    <!--页面背景的颜色-->
+    <color name="colorPageBg">#f2f4f5</color>
+
+    <color name="colorWhite">#ffffffff</color>
+
+    <!--item的5.0一下版本选择器颜色-->
+    <color name="itemLowBackground">#d9d9d9</color>
+    <!--item的水波纹颜色-->
+    <color name="itemBackground">#DD7D7D7D</color>
+
+    <!--tab标签栏文字的颜色-->
+    <color name="colorTabText">#585858</color>
+    <!--正文文字颜色-->
+    <color name="colorContent">#ff333333</color>
+</resources>
