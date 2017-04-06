@@ -115,10 +115,10 @@ public class LocalMusicChildFragment extends BaseFragment implements View.OnClic
     @Override
     public void onClick(View view) {
         switch (view.getId()){
-            case R.id.local_music_back:
+            case R.id.local_music_child_back:
                 getFragmentManager().popBackStack();
                 break;
-            case R.id.local_music_more:
+            case R.id.local_music_child_more:
                 mTopRightMenu.showAsDropDown(addMore, -225, 0);  //带偏移量
                 break;
         }

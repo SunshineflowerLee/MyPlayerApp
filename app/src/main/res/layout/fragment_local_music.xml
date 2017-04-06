@@ -23,12 +23,13 @@
 
             <ImageView
                 android:id="@+id/local_music_back"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="56dp"
+                android:layout_height="match_parent"
                 android:layout_centerVertical="true"
+                android:scaleType="center"
                 android:layout_marginRight="6dp"
-                android:background="?android:attr/selectableItemBackground"
-                android:src="@mipmap/back" />
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@mipmap/ic_toolbar_back" />
 
             <TextView
                 android:id="@+id/local_music_title"
@@ -39,10 +40,11 @@
 
             <ImageView
                 android:id="@+id/local_music_more"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="56dp"
+                android:layout_height="match_parent"
                 android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
+                android:scaleType="center"
+                android:background="?attr/selectableItemBackgroundBorderless"
                 android:src="@mipmap/ic_action_more" />
 
         </RelativeLayout>

@@ -56,4 +56,5 @@ public class ViewpagerMusicFragment extends Fragment {
         musicExpandListadapter.getListByType( Constants.START_FROM_LOCAL,null);
         musicExpandListadapter.notifyDataSetChanged();
     }
+
 }

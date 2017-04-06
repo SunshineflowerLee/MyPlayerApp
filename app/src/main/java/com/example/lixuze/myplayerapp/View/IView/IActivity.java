@@ -1,4 +1,4 @@
-package com.example.lixuze.myplayerapp.fragment;
+package com.example.lixuze.myplayerapp.View.IView;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;

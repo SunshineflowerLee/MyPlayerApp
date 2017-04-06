@@ -1,9 +1,11 @@
-package com.example.lixuze.myplayerapp;
+package com.example.lixuze.myplayerapp.View;
 
 import android.animation.ArgbEvaluator;
 
 
+import android.app.Activity;
 import android.support.annotation.NonNull;
+import android.support.annotation.StringRes;
 import android.support.design.widget.BottomSheetBehavior;
 
 import android.os.Bundle;
@@ -27,9 +29,9 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 
+import com.example.lixuze.myplayerapp.R;
 import com.example.lixuze.myplayerapp.Tool.Util;
-import com.example.lixuze.myplayerapp.fragment.IActivity;
-import com.example.lixuze.myplayerapp.fragment.LocalMusicFragment;
+import com.example.lixuze.myplayerapp.View.IView.IActivity;
 import com.example.lixuze.myplayerapp.fragment.ViewpagerMainFragment1;
 import com.example.lixuze.myplayerapp.fragment.ViewpagerMainFragment2;
 import com.example.lixuze.myplayerapp.persenter.IPersenter.ILocalMusicPresenter;
@@ -40,12 +42,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements IActivity,View.OnClickListener{
-    private LocalMusicFragment myFragment;
     private View mainbar;
     private Toolbar toolbar;
     private FrameLayout lrc_view;
     private View play_bar;
     private NavigationView navView;
+    private  DrawerLayout drawer;
     private ViewPager viewPager;
     private ImageView llTitleDisco;
     private ImageView llTitleMusic;
@@ -67,7 +69,7 @@ public class MainActivity extends AppCompatActivity implements IActivity,View.On
         initBarView();
         initPlayBarView();
         initLrcView();
-        initview();
+        initView();
         presenter = LocalMusicPresenter.getInstance();
         presenter.setContext(this);
         presenter.bindService();
@@ -84,10 +86,10 @@ public class MainActivity extends AppCompatActivity implements IActivity,View.On
         mainbar = findViewById(R.id.mainbar_layout);
         setSupportActionBar(toolbar);
         initNavView();
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+        drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        MyActionBarDrawerToggle toggle = new MyActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.setDrawerListener(toggle);
+        drawer.addDrawerListener(toggle);
         toggle.syncState();
 
         llTitleDisco = (ImageView) findViewById(R.id.iv_title_disco);
@@ -103,6 +105,23 @@ public class MainActivity extends AppCompatActivity implements IActivity,View.On
         Primary_evaluate = getResources().getColor(R.color.colorPrimary);
         barheight = toolbar.getMinimumHeight()+Util.getsatsubarsize(this);
     }
+
+
+    private class MyActionBarDrawerToggle extends  ActionBarDrawerToggle{
+
+        public MyActionBarDrawerToggle(Activity activity, DrawerLayout drawerLayout, Toolbar toolbar, @StringRes int openDrawerContentDescRes, @StringRes int closeDrawerContentDescRes) {
+            super(activity, drawerLayout, toolbar, openDrawerContentDescRes, closeDrawerContentDescRes);
+        }
+
+        @Override
+        public void onDrawerSlide(View drawerView, float slideOffset) {
+            super.onDrawerSlide(drawerView, slideOffset);
+            View view = drawer.getChildAt(0);
+            int offset = (int) (drawerView.getWidth()*slideOffset);
+            view.setTranslationX(offset);
+        }
+    }
+
 
     private void initNavView() {
         navView = (NavigationView) findViewById(R.id.nav_view);
@@ -154,7 +173,7 @@ public class MainActivity extends AppCompatActivity implements IActivity,View.On
     }
 
 
-    private void initview(){
+    private void initView(){
         viewPager = (ViewPager) findViewById(R.id.main_viewPager);
         viewPager.setOffscreenPageLimit(3);
 

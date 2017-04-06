@@ -5,15 +5,14 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.lixuze.myplayerapp.R;
+import com.example.lixuze.myplayerapp.View.IView.IActivity;
 import com.example.lixuze.myplayerapp.adapter.LocalRecyclerAdapter;
 import com.example.lixuze.myplayerapp.constant.Constants;
 import com.example.lixuze.myplayerapp.entites.Folder_info;
@@ -75,6 +74,6 @@ public class ViewpagerFloderFragment extends Fragment implements LocalRecyclerAd
         bundle.putString("titlename",folder_info.getFolder_name());
         fragment_child.setArguments(bundle);
 
-        activity.addFragement(this,fragment_child);
+        activity.addFragement(getParentFragment(),fragment_child);
     }
 }

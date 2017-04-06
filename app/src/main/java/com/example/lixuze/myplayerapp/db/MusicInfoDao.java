@@ -18,10 +18,6 @@ import java.util.List;
 public class MusicInfoDao {
 
     private static final String TABLE_MUSIC = "music_info";
-/*    private static final String START_FROM_ARTIST = "start_from_artist";
-    private static final String START_FROM_ALBUM = "start_from_album";
-    private static final String START_FROM_FOLDER = "start_from_folder";
-    private static final String START_FROM_FAVORITE = "start_from_favorite";*/
     private Context mContext;
 
     public MusicInfoDao(Context context) {

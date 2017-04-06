@@ -3,11 +3,13 @@ package com.example.lixuze.myplayerapp.fragment;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -30,13 +32,12 @@ import java.util.List;
 public class LocalMusicFragment extends BaseFragment implements View.OnClickListener{
     private final String TAG = "LocalMusicFragment";
     private ViewPager viewPager;
-    private ImageView back;
-    private ImageView addMore;
     private TopRightMenu mTopRightMenu;
     private TabLayout tabLayout;
     private View view;
     private ILocalMusicPresenter presenter;
-
+    private ImageView addMore;
+    private ImageView back;
     private List<Fragment> fragment_list;
     private String[] tab_name = {"歌曲", "歌手", "专辑","文件夹"};
 

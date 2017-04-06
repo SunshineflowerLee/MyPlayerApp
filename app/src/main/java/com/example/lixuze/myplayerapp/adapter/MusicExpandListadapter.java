@@ -24,7 +24,7 @@ import java.util.List;
 /**
  * Created by acer on 2016/1/9.
  */
-public class MusicExpandListadapter extends BaseExpandableListAdapter {
+public class MusicExpandListadapter extends BaseExpandableListAdapter implements ExpandableListView.OnGroupClickListener{
     private final String TAG = "MusicExpandListadapter";
     private LayoutInflater inflater;
     private ExpandableListView expandableListView;
@@ -133,14 +133,7 @@ public class MusicExpandListadapter extends BaseExpandableListAdapter {
         groupviewHolder.Song_Name.setText(music_info.getMusicname());
         groupviewHolder.Singer_Name.setText(music_info.getArtist());
         //自定义点击事件
-        expandableListView.setOnGroupClickListener(new ExpandableListView.OnGroupClickListener() {
-            @Override
-            public boolean onGroupClick(ExpandableListView parent, View v, int groupPosition, long id) {
-                presenter.startMusic(list,groupPosition);
-                return true;
-            }
-        });
-
+        expandableListView.setOnGroupClickListener(this);
         return convertView;
     }
 
@@ -236,13 +229,15 @@ public class MusicExpandListadapter extends BaseExpandableListAdapter {
         return convertView;
     }
 
-//该函数用来刷新listview
-    private void flash_list(){
-        this.notifyDataSetChanged();
-    }
-
     @Override
     public boolean isChildSelectable(int groupPosition, int childPosition) {
+        return true;
+    }
+
+    //group点击事件
+    @Override
+    public boolean onGroupClick(ExpandableListView parent, View v, int groupPosition, long id) {
+        presenter.startMusic(list,groupPosition);
         return true;
     }
 

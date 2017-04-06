@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v4.widget.NestedScrollView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -18,6 +17,7 @@ import com.bumptech.glide.Glide;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.listener.OnItemClickListener;
 import com.example.lixuze.myplayerapp.R;
+import com.example.lixuze.myplayerapp.View.IView.IActivity;
 import com.example.lixuze.myplayerapp.adapter.QuickAdapter;
 import com.example.lixuze.myplayerapp.adapter.entites.SongList;
 
